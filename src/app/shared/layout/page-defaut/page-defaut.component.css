@@ -1,0 +1,20 @@
+.fond {
+    background-color: rgb(204, 233, 229);
+}
+
+.centrer-texte {
+    text-align: center;
+}
+
+.centrer-image {
+    display: block;
+    margin: auto;
+    width: 0%;
+}
+
+.bouton {
+    height: 25px;
+    width: 50px;
+    background-color: red;
+    font-weight: bold;
+}
