@@ -1,0 +1,41 @@
+.centrer {
+    display: block;
+    margin: auto;
+}
+
+.centrer-texte {
+    text-align: center;
+}
+
+.fond-fiche {
+    border: 2px solid red;
+    background-color: whitesmoke;
+}
+
+.margin-fiche {
+    margin: auto;
+    width: 60%;
+}
+
+.titre-fiche {
+    font-weight: bold;
+    font-size: 28px;
+}
+
+.categories-fiche {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.taille-reponse {
+    font-size: 20px;
+}
+
+.margin-categories {
+    margin: 20px;
+}
+
+.margin-commentaires {
+    margin-left: 10px;
+    margin-right: 10px;
+}

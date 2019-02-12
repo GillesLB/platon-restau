@@ -6,7 +6,8 @@ export class Restaurant {
         public dateDerniereVisite: string,
         public note: number,
         public nombreVisite: number,
-        public nombreCommentaire: number
+        public nombreCommentaire: number,
+        public restaurantId: number
     ) {}
 
 }

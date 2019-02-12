@@ -1,0 +1,31 @@
+<div>
+  <table class="largeur-tableau">
+
+    <thead>
+      <tr>
+        <th>Nom</th>
+        <th>Adresse</th>
+        <th>Visité le</th>
+        <th>Note</th>
+        <th>Nb visites</th>
+        <th>Nb comm.</th>
+        <th>Détails</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <ng-container *ngFor="let restaurant of restaurants">
+        <tr>
+          <td class="texte-en-gras">{{restaurant.nom}}</td>
+          <td>{{restaurant.adresse}}</td> 
+          <td class="centrer-texte">{{restaurant.dateDerniereVisite}}</td>
+          <td class="centrer-texte">{{restaurant.note}} / 5</td>
+          <td class="centrer-texte">{{restaurant.nombreVisite}}</td>
+          <td class="centrer-texte">{{restaurant.nombreCommentaire}}</td>
+          <td class="centrer-texte"><a [routerLink]="['/liste', restaurant.restaurantId]">=></a></td> 
+        </tr>
+      </ng-container>
+    </tbody>
+
+  </table>
+</div>

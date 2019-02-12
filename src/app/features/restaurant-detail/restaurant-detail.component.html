@@ -1,0 +1,28 @@
+<div class="centrer fond-fiche margin-fiche taille-reponse">
+  <ng-container>
+    <div class="titre-fiche centrer-texte">Fiche du restaurant</div>
+    <div class="margin-categories">
+      <span class="categories-fiche">Nom de l'établissement : </span>{{restaurant[id].nom}}
+    </div>
+    <div class="margin-categories">
+        <span class="categories-fiche">Adresse : </span>{{restaurant[id].adresse}}
+    </div>
+    <div class="margin-categories">
+        <span class="categories-fiche">Date de visite : </span>{{restaurant[id].dateDerniereVisite}}
+    </div>
+    <div class="margin-categories">
+        <span class="categories-fiche">Note : </span>{{restaurant[id].note}}
+    </div>
+    <div class="margin-categories">
+        <span class="categories-fiche">Nombre de visite : </span>{{restaurant[id].nombreVisite}}
+    </div>
+    <div class="margin-categories">
+      <span class="categories-fiche">Commentaire(s) :</span>
+      <div *ngFor="let commentaire of commentaires">
+        <span class="categories-fiche">Auteur : </span>{{commentaire.auteur}}
+        <span class="categories-fiche">Commentaire : </span>{{commentaire.commentaire}}
+      </div>
+    </div>
+  </ng-container>
+</div>
+
