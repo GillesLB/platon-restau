@@ -5,6 +5,10 @@ th {
     color: white;
 }
 
+a:link {
+    text-decoration: none;
+}
+
 table {
     border-spacing: 5px;
 }
@@ -16,6 +20,10 @@ table, th, td {
 
 th, td {
     padding: 8px;
+}
+
+.margin-top {
+    margin-top: 100px;
 }
 
 .centrer-texte {
@@ -39,4 +47,39 @@ tr:nth-child(odd) {
     width: 90%;
     margin-left:auto;
     margin-right:auto;
+}
+
+.centrer-texte-vertical {
+    margin: auto;
+    line-height: 80px;
+}
+
+.aligner-gauche {
+    text-align: left;
+    margin-left: 5%;
+    display: inline;
+}
+
+.bouton-supprimer {
+    background-color: rgb(65, 4, 7);
+    color: white;
+    width: 180px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.bouton-supprimer:hover {
+    background-color: rgb(88, 37, 37);
+}
+
+.bouton-ajouter {
+    background-color: rgb(24, 59, 4);
+    color: white;
+    width: 180px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.bouton-ajouter:hover {
+    background-color: rgb(43, 80, 53);
 }

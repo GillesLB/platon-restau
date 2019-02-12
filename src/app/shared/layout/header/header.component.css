@@ -1,6 +1,10 @@
-.bleue {
-    background-color: blue;
-    color: white;
+.fond-header {
+    background-color: rgb(204, 233, 229);
+}
+
+.texte-header {
+    font-weight: bold;
+    font-size: 28px;
 }
 
 .centrer-texte-horizontal {

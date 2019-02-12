@@ -19,7 +19,7 @@ export class ListeRestaurantsComponent implements OnInit {
     // tslint:disable-next-line:max-line-length
     {'nom': 'Une frite sinon rien', 'adresse': '7 rue de Belgique', 'dateDerniereVisite': '11/01/2019', 'note': 3, 'nombreVisite': 1, 'nombreCommentaire': 1, 'restaurantId': 3},
     // tslint:disable-next-line:max-line-length
-    {'nom': 'A la morue alcoolique', 'adresse': '43 rue de Porto', 'dateDerniereVisite': '08/01/2019', 'note': 4, 'nombreVisite': 1, 'nombreCommentaire': 2, 'restaurantId': 4},
+    {'nom': 'A la salade alcoolique', 'adresse': '43 rue de la vodka', 'dateDerniereVisite': '08/01/2019', 'note': 4, 'nombreVisite': 1, 'nombreCommentaire': 2, 'restaurantId': 4},
     // tslint:disable-next-line:max-line-length
     {'nom': 'Chez Johan et Marie', 'adresse': '17 rue du Burn Down', 'dateDerniereVisite': '27/01/2019', 'note': 5, 'nombreVisite': 3, 'nombreCommentaire': 5, 'restaurantId': 5},
   ];

@@ -1,11 +1,15 @@
 .fond-footer {
-    color: white;
-    background-color: brown;
+    background-color: rgb(204, 233, 229);
 }
 
-.centrer-texte-horizontal {
-    text-align: center;
-    vertical-align: middle;
+.texte-footer {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.ancrage-footer {
+    position: absolute; 
+    bottom: 0;
 }
 
 .centrer-texte-vertical {
@@ -13,6 +17,14 @@
     line-height: 80px;
 }
 
-.hauteur {
-    height: 80px;
+.texte-gauche {
+    text-align: left;
+    margin-left: 5%;
+    display: inline;
+}
+
+.texte-droite {
+    text-align: right;
+    margin-right: 5%;
+    float: right;
 }

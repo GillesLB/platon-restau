@@ -2,6 +2,10 @@
     background-color: rgb(204, 233, 229);
 }
 
+.toute-la-page {
+    min-height: 100%;
+}
+
 .centrer-texte {
     text-align: center;
 }
