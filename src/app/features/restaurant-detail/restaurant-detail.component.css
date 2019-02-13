@@ -7,6 +7,10 @@
     text-align: center;
 }
 
+a:link {
+    text-decoration: none;
+}
+
 .fond-fiche {
     border: 2px solid red;
     background-color: whitesmoke;
@@ -38,4 +42,40 @@
 .margin-commentaires {
     margin-left: 10px;
     margin-right: 10px;
+}
+
+.aligner-gauche {
+    text-align: left;
+    margin-left: 5%;
+    display: inline;
+}
+
+.centrer-bouton {
+    margin: auto;
+ }
+
+.bouton-ajouter-note {
+    background-color: rgb(129, 121, 12);
+    color: white;
+    width: 180px;
+    height: 30px;
+    cursor: pointer;
+    margin-top: 30px;
+}
+
+.bouton-ajouter-note:hover {
+    background-color: rgb(160, 158, 65);
+}
+
+.bouton-ajouter-commentaire {
+    background-color: rgb(4, 9, 59);
+    color: white;
+    width: 180px;
+    height: 30px;
+    cursor: pointer;
+    margin-top: 30px;
+}
+
+.bouton-ajouter-commentaire:hover {
+    background-color: rgb(43, 44, 80);
 }
