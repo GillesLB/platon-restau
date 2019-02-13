@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HttpModule } from '@angular/http';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from 'src/app/app.component';
 import { HeaderComponent } from 'src/app/shared/layout/header/header.component';
@@ -17,12 +18,16 @@ import { AjouterNoteComponent } from './features/ajouter-note/ajouter-note.compo
 import { AjouterCommentaireComponent } from './features/ajouter-commentaire/ajouter-commentaire.component';
 import { PaginationComponent } from './shared/components/pagination/pagination.component';
 import { PaginationService } from './features/pagination.service';
+import { PageAccueilComponent } from './features/page-accueil/page-accueil.component';
+import { MenuGaucheComponent } from './shared/layout/menu-gauche/menu-gauche.component';
+
 
 const routes: Routes = [
   { path: '',
     redirectTo: '/',
     pathMatch: 'full'
   },
+  { path: '', component: PageAccueilComponent },
   { path: 'liste', component: ListeRestaurantsComponent },
   { path: 'liste/:restaurantId', component: RestaurantDetailComponent },
   { path: 'ajouter-restaurant', component: AjouterRestaurantComponent },
@@ -46,7 +51,9 @@ const routes: Routes = [
     SupprimerRestaurantComponent,
     AjouterNoteComponent,
     AjouterCommentaireComponent,
-    PaginationComponent
+    PaginationComponent,
+    PageAccueilComponent,
+    MenuGaucheComponent
   ],
   exports: [
     RouterModule
@@ -54,7 +61,8 @@ const routes: Routes = [
   imports: [
     BrowserModule,
     RouterModule.forRoot(routes),
-    HttpModule
+    HttpModule,
+    FormsModule
   ],
   providers: [
     ListeRestaurantsComponent,

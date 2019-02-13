@@ -18,6 +18,13 @@ th, td {
     padding: 8px;
 }
 
+.titre {
+    text-align: center;
+    font-weight: bold;
+    font-size: 22px;
+    margin-bottom: 30px;
+}
+
 .margin-top {
     margin-top: 100px;
 }
@@ -39,7 +46,6 @@ tr:nth-child(odd) {
 }
 
 .largeur-tableau {
-    width: 90%;
     margin-left: auto;
     margin-right: auto;
 }
@@ -56,7 +62,7 @@ tr:nth-child(odd) {
 }
 
 .centrer-pagination {
-    margin-left: 38%;
+    margin-left: 42%;
     margin-top: 20px;
 }
 
@@ -98,12 +104,21 @@ tr:nth-child(odd) {
 }
 
 .largeur-colonne-nom {
-    width: 250px
+    width: 300px
 }
 
 .largeur-colonne-adresse {
-    width: 320px
+    width: 370px
 }
+
+.largeur-colonne-visite {
+    width: 130px
+}
+
+.largeur-colonne-note {
+    width: 100px
+}
+
 
 .bouton-pagination {
     margin-left: 20px;

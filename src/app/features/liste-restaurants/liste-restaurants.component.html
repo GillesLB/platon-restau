@@ -1,4 +1,9 @@
 <div>
+
+  <app-menu-gauche></app-menu-gauche>
+  
+  <div class="titre">Liste des restaurants :</div>
+
   <table class="largeur-tableau">
 
     <thead class="centrer-texte">
@@ -18,8 +23,8 @@
         <tr>
           <td class="texte-en-gras largeur-colonne-nom">{{restaurantVisible.nom}}</td>
           <td class="largeur-colonne-adresse">{{restaurantVisible.adresse}}</td> 
-          <td class="centrer-texte">{{restaurantVisible.dateDerniereVisite}}</td>
-          <td class="centrer-texte">{{restaurantVisible.note}} / 5</td>
+          <td class="centrer-texte largeur-colonne-visite">{{restaurantVisible.dateDerniereVisite}}</td>
+          <td class="centrer-texte largeur-colonne-note">{{restaurantVisible.note}} / 5</td>
           <td class="centrer-texte">{{restaurantVisible.nombreVisite}}</td>
           <td class="centrer-texte">{{restaurantVisible.nombreCommentaire}}</td>
           <td class="centrer-texte">
