@@ -1,7 +1,7 @@
 <div>
   <table class="largeur-tableau">
 
-    <thead>
+    <thead class="centrer-texte">
       <tr>
         <th>Nom</th>
         <th>Adresse</th>
@@ -14,22 +14,31 @@
     </thead>
 
     <tbody>
-      <ng-container *ngFor="let restaurant of restaurants">
+      <ng-container *ngFor="let restaurantVisible of restaurantsVisibles">
         <tr>
-          <td class="texte-en-gras">{{restaurant.nom}}</td>
-          <td>{{restaurant.adresse}}</td> 
-          <td class="centrer-texte">{{restaurant.dateDerniereVisite}}</td>
-          <td class="centrer-texte">{{restaurant.note}} / 5</td>
-          <td class="centrer-texte">{{restaurant.nombreVisite}}</td>
-          <td class="centrer-texte">{{restaurant.nombreCommentaire}}</td>
+          <td class="texte-en-gras largeur-colonne-nom">{{restaurantVisible.nom}}</td>
+          <td class="largeur-colonne-adresse">{{restaurantVisible.adresse}}</td> 
+          <td class="centrer-texte">{{restaurantVisible.dateDerniereVisite}}</td>
+          <td class="centrer-texte">{{restaurantVisible.note}} / 5</td>
+          <td class="centrer-texte">{{restaurantVisible.nombreVisite}}</td>
+          <td class="centrer-texte">{{restaurantVisible.nombreCommentaire}}</td>
           <td class="centrer-texte">
-            <a [routerLink]="['/liste', restaurant.restaurantId]"><app-bouton></app-bouton></a>
+            <a [routerLink]="['/liste', restaurantVisible.restaurantId]"><app-bouton></app-bouton></a>
           </td>
         </tr>
       </ng-container>
     </tbody>
 
   </table>
+
+  <nav aria-label="Pagination liste restaurants" class="centrer-pagination">
+    <ul *ngIf="nombreRestaurantTotal > 5" class="pagination">
+      <li class="page-item bouton-pagination"><a class="page-link pointeur" [ngClass]="{'cache': pageEnCours === 1}" (click)="pagePrecedente()"><<  Précédent</a></li>
+      <!-- TODO rendre la pagination dynamique -->
+      <li class="page-item bouton-pagination"><a class="page-link pointeur" [ngClass]="{'cache': pageEnCours === pageMax}" (click)="pageSuivante()">Suivant  >></a></li>
+    </ul>
+  </nav>
+
   <br />
 
   <div class="fond-footer texte-footer">
@@ -44,5 +53,5 @@
           </a>
       </div>
   </div>
- 
+
 </div>

@@ -5,10 +5,6 @@ th {
     color: white;
 }
 
-a:link {
-    text-decoration: none;
-}
-
 table {
     border-spacing: 5px;
 }
@@ -40,13 +36,12 @@ tr:nth-child(odd) {
 
 .texte-en-gras {
     font-weight: bold;
-
 }
 
 .largeur-tableau {
     width: 90%;
-    margin-left:auto;
-    margin-right:auto;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .centrer-texte-vertical {
@@ -58,6 +53,11 @@ tr:nth-child(odd) {
     text-align: left;
     margin-left: 5%;
     display: inline;
+}
+
+.centrer-pagination {
+    margin-left: 38%;
+    margin-top: 20px;
 }
 
 .bouton-supprimer {
@@ -73,8 +73,8 @@ tr:nth-child(odd) {
 }
 
 .bouton-ajouter {
-    background-color: rgb(24, 59, 4);
     color: white;
+    background-color: rgb(24, 59, 4);
     width: 180px;
     height: 30px;
     cursor: pointer;
@@ -82,4 +82,30 @@ tr:nth-child(odd) {
 
 .bouton-ajouter:hover {
     background-color: rgb(43, 80, 53);
+}
+
+.cache {
+    visibility: hidden;
+}
+
+.pointeur {
+    cursor: pointer;
+}
+
+.desactive {
+    pointer-events: none;
+    background-color: rgb(152, 152, 233);
+}
+
+.largeur-colonne-nom {
+    width: 250px
+}
+
+.largeur-colonne-adresse {
+    width: 320px
+}
+
+.bouton-pagination {
+    margin-left: 20px;
+    margin-right: 20px;
 }

@@ -17,18 +17,23 @@
         <span class="categories-fiche">Nombre de visite : </span>{{restaurant[id].nombreVisite}}
     </div>
     <div class="margin-categories">
-      <span class="categories-fiche">Commentaire(s) :</span>
-      <div *ngFor="let commentaire of commentaires">
-        <span class="categories-fiche">Auteur : </span>{{commentaire.auteur}}
-        <span class="categories-fiche">Commentaire : </span>{{commentaire.commentaire}}
+      <div class="align">
+        <span class="categories-fiche marge-droite">Commentaire(s) :</span>
+        <div *ngIf="restaurant[id].nombreCommentaire === 0"> Pas encore de commentaire ...</div>
+      </div>
+      <div *ngFor="let commentaire of restaurant[id].commentaire" class="centrer-commentaire">
+        <ul>
+          <li><span class="categories-fiche">Auteur : </span>{{commentaire.auteur}}</li>
+          <li><span class="categories-fiche">Commentaire : </span>{{commentaire.texte}}</li>
+        </ul>
       </div>
     </div>
   </ng-container>
   <br />
 </div>
 
-<div class="centrer-bouton">
-    <div class="centrer-texte-vertical aligner-gauche centrer-bouton">
+<div class="centrer-boutons">
+    <div class="centrer-texte-vertical aligner-gauche">
         <a routerLink="/ajouter-note" routerLinkActive="active">
           <input type="button" value="Ajouter une note" class="bouton-ajouter-note" />
         </a>
@@ -38,6 +43,9 @@
           <input type="button" value="Ajouter un commentaire" class="bouton-ajouter-commentaire" />
         </a>
     </div>
+    <div class="centrer-texte-vertical aligner-gauche">
+      <a routerLink="/liste" routerLinkActive="active">
+        <input type="button" value="Retour à la liste" class="bouton-retour-liste" />
+      </a>
+  </div>
 </div>
-
-

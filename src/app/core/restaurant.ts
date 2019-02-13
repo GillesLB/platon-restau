@@ -7,6 +7,7 @@ export class Restaurant {
         public note: number,
         public nombreVisite: number,
         public nombreCommentaire: number,
+        public commentaire: any[],
         public restaurantId: number
     ) {}
 
