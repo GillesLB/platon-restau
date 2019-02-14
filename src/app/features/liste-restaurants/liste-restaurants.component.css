@@ -18,6 +18,10 @@ th, td {
     padding: 8px;
 }
 
+.espace-haut {
+    height: 20px;
+}
+
 .titre {
     text-align: center;
     font-weight: bold;
@@ -57,37 +61,13 @@ tr:nth-child(odd) {
 
 .aligner-gauche {
     text-align: left;
-    margin-left: 5%;
+    margin-left: 10%;
     display: inline;
 }
 
 .centrer-pagination {
     margin-left: 42%;
-    margin-top: 20px;
-}
-
-.bouton-supprimer {
-    background-color: rgb(65, 4, 7);
-    color: white;
-    width: 180px;
-    height: 30px;
-    cursor: pointer;
-}
-
-.bouton-supprimer:hover {
-    background-color: rgb(88, 37, 37);
-}
-
-.bouton-ajouter {
-    color: white;
-    background-color: rgb(24, 59, 4);
-    width: 180px;
-    height: 30px;
-    cursor: pointer;
-}
-
-.bouton-ajouter:hover {
-    background-color: rgb(43, 80, 53);
+    margin-top: 30px;
 }
 
 .cache {
@@ -99,36 +79,18 @@ tr:nth-child(odd) {
 }
 
 .largeur-colonne-nom {
-    width: 300px
+    width: 260px
 }
 
 .largeur-colonne-adresse {
-    width: 370px
-}
-
-.largeur-colonne-visite {
-    width: 130px
+    width: 300px
 }
 
 .largeur-colonne-note {
-    width: 100px
+    width: 80px
 }
-
 
 .bouton-pagination {
     margin-left: 20px;
     margin-right: 20px;
-}
-
-.bouton-ajouter-commentaire {
-    background-color: rgb(4, 9, 59);
-    color: white;
-    width: 200px;
-    height: 30px;
-    cursor: pointer;
-    margin-top: 30px;
-}
-
-.bouton-ajouter-commentaire:hover {
-    background-color: rgb(43, 44, 80);
 }

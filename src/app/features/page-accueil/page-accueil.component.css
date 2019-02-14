@@ -14,3 +14,7 @@
     display: block;
     margin: auto;
 }
+
+.espace-haut {
+    height: 20px;
+}

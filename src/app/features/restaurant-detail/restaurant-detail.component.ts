@@ -10,18 +10,37 @@ import { ListeRestaurantsComponent } from '../liste-restaurants/liste-restaurant
 })
 export class RestaurantDetailComponent implements OnInit {
 
+  public formulaireCommentaire: string;
+  public formulaireNote: string;
   public id: string;
+
+  public restaurant = this.restaurantsLRC.restaurants;
 
   constructor(
     public restaurantsLRC: ListeRestaurantsComponent,
     private route: ActivatedRoute
   ) {  }
 
-  restaurant = this.restaurantsLRC.restaurants;
-
   ngOnInit() {
     this.id = this.route.snapshot.paramMap.get('restaurantId');
-    console.log('ID : ', this.id);
+    this.formulaireCommentaire = 'cacher-formulaire-commentaire';
+    this.formulaireNote = 'cacher-formulaire-note';
+  }
+
+  cacherVisibleNote() {
+    if (this.formulaireNote === 'cacher-formulaire-note') {
+      this.formulaireNote = '';
+    } else {
+      this.formulaireNote = 'cacher-formulaire-note';
+    }
+  }
+
+  cacherVisibleCommentaire() {
+    if (this.formulaireCommentaire === 'cacher-formulaire-commentaire') {
+      this.formulaireCommentaire = '';
+    } else {
+      this.formulaireCommentaire = 'cacher-formulaire-commentaire';
+    }
   }
 
 }

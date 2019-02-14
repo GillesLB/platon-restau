@@ -2,6 +2,8 @@
 
   <app-menu-gauche></app-menu-gauche>
   
+  <div class="espace-haut"></div>
+
   <div class="titre">Liste des restaurants :</div>
 
   <table class="largeur-tableau">
@@ -23,10 +25,12 @@
         <tr>
           <td class="texte-en-gras largeur-colonne-nom">{{restaurantVisible.nom}}</td>
           <td class="largeur-colonne-adresse">{{restaurantVisible.adresse}}</td> 
-          <td class="centrer-texte largeur-colonne-visite">{{restaurantVisible.dateDerniereVisite}}</td>
-          <td class="centrer-texte largeur-colonne-note">{{restaurantVisible.note}} / 5</td>
+          <td class="centrer-texte">{{restaurantVisible.dateDerniereVisite}}</td>
+          <td *ngIf="restaurantVisible.note" class="centrer-texte largeur-colonne-note">{{restaurantVisible.note}} / 5</td>
+          <td *ngIf="!restaurantVisible.note" class="centrer-texte largeur-colonne-note">-</td>
           <td class="centrer-texte">{{restaurantVisible.nombreVisite}}</td>
-          <td class="centrer-texte">{{restaurantVisible.nombreCommentaire}}</td>
+          <td *ngIf="restaurantVisible.nombreCommentaire" class="centrer-texte largeur-colonne-note">{{restaurantVisible.nombreCommentaire}}</td>
+          <td *ngIf="!restaurantVisible.nombreCommentaire" class="centrer-texte largeur-colonne-note">-</td>
           <td class="centrer-texte">
             <a [routerLink]="['/liste', restaurantVisible.restaurantId]"><app-bouton></app-bouton></a>
           </td>
@@ -44,24 +48,6 @@
     </ul>
   </nav>
 
-  <br />
-
-  <div class="fond-footer texte-footer">
-      <div class="centrer-texte-vertical aligner-gauche">
-          <a routerLink="/ajouter-restaurant" routerLinkActive="active">
-            <input type="button" value="Ajouter un restaurant" class="bouton-ajouter" />
-          </a>
-      </div>
-      <div class="centrer-texte-vertical aligner-gauche">
-          <a routerLink="/supprimer-restaurant" routerLinkActive="active">
-            <input type="button" value="Supprimer un restaurant" class="bouton-supprimer" />
-          </a>
-      </div>
-      <div class="centrer-texte-vertical aligner-gauche">
-          <a routerLink="/ajouter-commentaire" routerLinkActive="active">
-            <input type="button" value="Ajouter un commentaire" class="bouton-ajouter-commentaire" />
-          </a>
-      </div>
-  </div>
-
+  <div class="espace-haut"></div>
+  
 </div>

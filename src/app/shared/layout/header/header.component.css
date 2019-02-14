@@ -20,3 +20,7 @@
 .hauteur {
     height: 80px;
 }
+
+.separation-basse {
+    border-bottom: 1px solid rgb(188, 209, 206);
+}

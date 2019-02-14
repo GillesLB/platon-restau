@@ -1,7 +1,7 @@
 .menu-gauche {
     width: 200px;
 }
-  
+
 .menu-gauche a {
     background-color: rgb(204, 233, 229);
     color: black;
@@ -15,7 +15,7 @@
 }
 
 .menu-gauche a.active {
-    background-color: rgb(176, 196, 177);
+    background-color: rgb(181, 204, 201);
     color: white;
 }
 
@@ -24,10 +24,10 @@
 }
 
 .titre-menu {
-    text-align: center;
-    background-color: rgb(132, 148, 133);
+    text-align: left;
     font-weight: bold;
     font-size: 20px;
+    margin-left: 10px;
 }
 
 .active {
