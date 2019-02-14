@@ -1,51 +1,52 @@
-<div class="centrer fond-fiche margin-fiche taille-reponse">
-  <ng-container>
-    <div class="titre-fiche centrer-texte">Fiche du restaurant</div>
-    <div class="margin-categories">
-      <span class="categories-fiche">Nom de l'établissement : </span>{{restaurant[id].nom}}
-    </div>
-    <div class="margin-categories">
-        <span class="categories-fiche">Adresse : </span>{{restaurant[id].adresse}}
-    </div>
-    <div class="margin-categories">
-        <span class="categories-fiche">Date de visite : </span>{{restaurant[id].dateDerniereVisite}}
-    </div>
-    <div class="margin-categories">
-        <span class="categories-fiche">Note : </span>{{restaurant[id].note}}
-    </div>
-    <div class="margin-categories">
-        <span class="categories-fiche">Nombre de visite : </span>{{restaurant[id].nombreVisite}}
-    </div>
-    <div class="margin-categories">
-      <div class="align">
-        <span class="categories-fiche marge-droite">Commentaire(s) :</span>
-        <div *ngIf="restaurant[id].nombreCommentaire === 0"> Pas encore de commentaire ...</div>
-      </div>
-      <div *ngFor="let commentaire of restaurant[id].commentaire" class="centrer-commentaire">
-        <ul>
-          <li><span class="categories-fiche">Auteur : </span>{{commentaire.auteur}}</li>
-          <li><span class="categories-fiche">Commentaire : </span>{{commentaire.texte}}</li>
-        </ul>
-      </div>
-    </div>
-  </ng-container>
-  <br />
-</div>
+<div>
 
-<div class="centrer-boutons">
-    <div class="centrer-texte-vertical aligner-gauche">
-        <a routerLink="/ajouter-note" routerLinkActive="active">
-          <input type="button" value="Ajouter une note" class="bouton-ajouter-note" />
-        </a>
-    </div>
-    <div class="centrer-texte-vertical aligner-gauche">
-        <a routerLink="/ajouter-commentaire" routerLinkActive="active">
-          <input type="button" value="Ajouter un commentaire" class="bouton-ajouter-commentaire" />
-        </a>
-    </div>
-    <div class="centrer-texte-vertical aligner-gauche">
-      <a routerLink="/liste" routerLinkActive="active">
-        <input type="button" value="Retour à la liste" class="bouton-retour-liste" />
-      </a>
+  <app-menu-gauche></app-menu-gauche>
+
+  <div class="centrer fond-fiche margin-fiche taille-reponse">
+    <ng-container>
+      <div class="titre-fiche centrer-texte">Fiche du restaurant</div>
+      <div class="margin-categories">
+        <span class="categories-fiche">Nom de l'établissement : </span>{{restaurant[id].nom}}
+      </div>
+      <div class="margin-categories">
+          <span class="categories-fiche">Adresse : </span>{{restaurant[id].adresse}}
+      </div>
+      <div class="margin-categories">
+          <span class="categories-fiche">Date de visite : </span>{{restaurant[id].dateDerniereVisite}}
+      </div>
+      <div class="margin-categories">
+          <span class="categories-fiche">Note : </span>{{restaurant[id].note}}
+      </div>
+      <div class="margin-categories">
+          <span class="categories-fiche">Nombre de visite : </span>{{restaurant[id].nombreVisite}}
+      </div>
+      <div class="margin-categories">
+        <div class="align">
+          <span class="categories-fiche marge-droite">Commentaire(s) :</span>
+          <div *ngIf="restaurant[id].nombreCommentaire === 0"> Pas encore de commentaire ...</div>
+        </div>
+        <div *ngFor="let commentaire of restaurant[id].commentaire" class="centrer-commentaire">
+          <ul>
+            <li><span class="categories-fiche">Auteur : </span>{{commentaire.auteur}}</li>
+            <li><span class="categories-fiche">Commentaire : </span>{{commentaire.texte}}</li>
+          </ul>
+        </div>
+      </div>
+    </ng-container>
+    <br />
   </div>
+
+  <div class="centrer-boutons">
+      <div class="centrer-texte-vertical aligner-gauche">
+          <a routerLink="/ajouter-note" routerLinkActive="active">
+            <input type="button" value="Ajouter une note" class="bouton-ajouter-note" />
+          </a>
+      </div>
+      <div class="centrer-texte-vertical aligner-gauche">
+          <a routerLink="/ajouter-commentaire" routerLinkActive="active">
+            <input type="button" value="Ajouter un commentaire" class="bouton-ajouter-commentaire" />
+          </a>
+      </div>
+  </div>
+
 </div>

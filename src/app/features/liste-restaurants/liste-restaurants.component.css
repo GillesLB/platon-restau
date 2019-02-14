@@ -98,11 +98,6 @@ tr:nth-child(odd) {
     cursor: pointer;
 }
 
-.desactive {
-    pointer-events: none;
-    background-color: rgb(152, 152, 233);
-}
-
 .largeur-colonne-nom {
     width: 300px
 }
@@ -123,4 +118,17 @@ tr:nth-child(odd) {
 .bouton-pagination {
     margin-left: 20px;
     margin-right: 20px;
+}
+
+.bouton-ajouter-commentaire {
+    background-color: rgb(4, 9, 59);
+    color: white;
+    width: 200px;
+    height: 30px;
+    cursor: pointer;
+    margin-top: 30px;
+}
+
+.bouton-ajouter-commentaire:hover {
+    background-color: rgb(43, 44, 80);
 }
