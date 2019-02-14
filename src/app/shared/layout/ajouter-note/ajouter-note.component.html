@@ -5,40 +5,19 @@
 <div class="centrer-formulaire margin-bottom">
   <form>
 
-    <div class="margin-etoile">
-      <label class="titre-formulaire" for="une">😒 Beurk : </label>
-      <input  class="margin-right largeur-input" type="radio" 
-      name="note-radio" id="une" value="1" checked />
-    </div>
-
-    <div class="margin-etoile">
-      <label class="titre-formulaire" for="deux">🤨 Bof : </label>
-      <input  class="margin-right largeur-input" type="radio" 
-      name="note-radio" id="deux" value="2" />
-    </div>
-
-    <div class="margin-etoile">
-      <label class="titre-formulaire" for="trois">🙂 Correct : </label>
-      <input  class="margin-right largeur-input" type="radio" 
-      name="note-radio" id="trois" value="3" />
-    </div>
-
-    <div class="margin-etoile">
-      <label class="titre-formulaire" for="quatre">😋 Bien : </label>
-      <input  class="margin-right largeur-input" type="radio" 
-      name="note-radio" id="quatre" value="4" />
-    </div>
-
-    <div class="margin-etoile">
-      <label class="titre-formulaire" for="cinq">😍 Extra : </label>
-      <input  class="margin-right largeur-input" type="radio" 
-      name="note-radio" id="cinq" value="5" />
+    <div *ngFor="let note of notes">
+      <div class="margin-etoile">
+        <label class="titre-formulaire" for="une">{{note.avis}}</label>
+        <input  class="margin-right largeur-input" type="radio" 
+        name="note-radio" id="une" value={{note.note}}
+        (change)="changementEtatBoutonRadio($event)"
+      />
+      </div>
     </div>
 
     <input class="margin-bouton bouton-envoyer-note" type="submit"  
           name="bouton-envoyer" id="bouton-envoyer"
-          value="Envoyer la note"
-          (click)="mettreDansLeTableauNote()" 
+          value="Envoyer la note" (click)="envoyerNote()"
     />
   
   </form>

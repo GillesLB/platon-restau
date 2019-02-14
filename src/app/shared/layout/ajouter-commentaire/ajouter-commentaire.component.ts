@@ -16,18 +16,14 @@ export class AjouterCommentaireComponent implements OnInit {
     public restaurantDetailComponent: RestaurantDetailComponent,
   ) { }
 
-  mettreDansLeTableau(form: NgForm) {
-    // alert(auteur);
-  }
-
   onSubmit(value) {
     const auteur = value.auteur;
     const texte = value.texte;
-    console.log('Auteur : ', auteur);
-    console.log('Commentaire : ', texte);
-    console.log('Id : ', this.restaurantDetailComponent.id);
-    console.log('Bla : ', this.listeRestaurantsComponent.restaurants[this.restaurantDetailComponent.id]);
-    // (this.listeRestaurantsComponent.restaurants[this.restaurantDetailComponent.id].commentaire).push({'auteur': auteur, 'texte': texte});
+
+    this.restaurantDetailComponent.formulaireCommentaire = 'cacher-formulaire-commentaire';
+    (this.listeRestaurantsComponent.restaurants[this.restaurantDetailComponent.id].commentaire).push({'auteur': auteur, 'texte': texte});
+    const ajoutNombreCommentaire = (this.listeRestaurantsComponent.restaurants[this.restaurantDetailComponent.id].nombreCommentaire) + 1;
+    this.listeRestaurantsComponent.restaurants[this.restaurantDetailComponent.id].nombreCommentaire = ajoutNombreCommentaire;
   }
 
   ngOnInit() {

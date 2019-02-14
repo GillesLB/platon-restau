@@ -16,7 +16,7 @@
 .titre-page {
     font-weight: bold;
     font-size: 22px;
-    margin-left: 480px;
+    text-align: center;
     margin-bottom: 30px;
 }
 
@@ -48,7 +48,7 @@
 }
 
 .largeur-input {
-    width: 370px;
+    width: 70%;
 }
 
 .margin-auteur {
