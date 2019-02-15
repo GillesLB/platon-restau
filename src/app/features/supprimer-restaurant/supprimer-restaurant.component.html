@@ -17,7 +17,6 @@
             <th>Note</th>
             <th>Nb visites</th>
             <th>Nb comm.</th>
-            <th>Détail</th>
         </tr>
         </thead>
     
@@ -25,20 +24,18 @@
         <ng-container *ngFor="let restaurantVisible of restaurantsVisibles">
             <tr>
                 <td>
-                    <input type="checkbox" id={{restaurantVisible.nom}}
-                    value={{restaurantVisible.restaurantId}} />
+                    <input type="checkbox" id={{restaurantVisible.nom}} name="restaurantsVisibles"
+                    value={{restaurantVisible.restaurantId}} [(ngModel)]="check"
+                    (change)="cocher($event, check)" [ngClass]="{'ligne-a-supprimer': check === true}" />
                 </td>
-                <td class="texte-en-gras largeur-colonne-nom">{{restaurantVisible.nom}}</td>
-                <td class="largeur-colonne-adresse">{{restaurantVisible.adresse}}</td> 
-                <td class="centrer-texte">{{restaurantVisible.dateDerniereVisite}}</td>
-                <td *ngIf="restaurantVisible.note" class="centrer-texte largeur-colonne-note">{{restaurantVisible.note}} / 5</td>
-                <td *ngIf="!restaurantVisible.note" class="centrer-texte largeur-colonne-note">-</td>
-                <td class="centrer-texte">{{restaurantVisible.nombreVisite}}</td>
-                <td *ngIf="restaurantVisible.nombreCommentaire" class="centrer-texte largeur-colonne-note">{{restaurantVisible.nombreCommentaire}}</td>
-                <td *ngIf="!restaurantVisible.nombreCommentaire" class="centrer-texte largeur-colonne-note">-</td>
-                <td class="centrer-texte">
-                    <a [routerLink]="['/liste', restaurantVisible.restaurantId]"><app-bouton></app-bouton></a>
-                </td>
+                <td [ngClass]="{'ligne-a-supprimer': check === true}" class="texte-en-gras largeur-colonne-nom">{{restaurantVisible.nom}}</td>
+                <td [ngClass]="{'ligne-a-supprimer': check === true}" class="largeur-colonne-adresse">{{restaurantVisible.adresse}}</td> 
+                <td [ngClass]="{'ligne-a-supprimer': check === true}" class="centrer-texte">{{restaurantVisible.dateDerniereVisite}}</td>
+                <td [ngClass]="{'ligne-a-supprimer': check === true}" *ngIf="restaurantVisible.note" class="centrer-texte largeur-colonne-note">{{restaurantVisible.note}} / 5</td>
+                <td [ngClass]="{'ligne-a-supprimer': check === true}" *ngIf="!restaurantVisible.note" class="centrer-texte largeur-colonne-note">-</td>
+                <td [ngClass]="{'ligne-a-supprimer': check === true}" class="centrer-texte">{{restaurantVisible.nombreVisite}}</td>
+                <td [ngClass]="{'ligne-a-supprimer': check === true}" *ngIf="restaurantVisible.nombreCommentaire" class="centrer-texte largeur-colonne-note">{{restaurantVisible.nombreCommentaire}}</td>
+                <td [ngClass]="{'ligne-a-supprimer': check === true}" *ngIf="!restaurantVisible.nombreCommentaire" class="centrer-texte largeur-colonne-note">-</td>
             </tr>
         </ng-container>
         </tbody>
@@ -55,10 +52,12 @@
     
     <div class="espace-haut"></div>
 
-    <input class="margin-bouton bouton-supprimer-restaurant" type="submit"  
-            name="bouton-supprimer-restaurant" id="bouton-supprimer-restaurant"
-            value="Supprimer la sélection" (click)="supprimerRestaurant()"
-/>
+    <span class="margin-bouton">
+        <input class="bouton-supprimer-restaurant {{supprimerSelection}}" type="submit"  
+                name="bouton-supprimer-restaurant" id="bouton-supprimer-restaurant"
+                value="Supprimer la sélection" (click)="supprimerRestaurant()"
+        />
+    </span>
     
     <div class="espace-haut"></div>
     

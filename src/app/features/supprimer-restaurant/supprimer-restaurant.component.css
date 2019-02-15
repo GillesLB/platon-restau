@@ -99,6 +99,12 @@ tr:nth-child(odd) {
     color: red;
 }
 
+.margin-bouton {
+    display: block;
+    margin: auto;
+    text-align: center;
+}
+
 .bouton-supprimer-restaurant {
     background-color: rgb(172, 21, 12);
     color: white;
@@ -110,4 +116,13 @@ tr:nth-child(odd) {
 
 .bouton-supprimer-restaurant:hover {
     background-color: rgb(176, 58, 65);
+}
+
+.ligne-a-supprimer {
+    background-color: rgb(104, 24, 24);
+    color: white;
+}
+
+.cacher-bouton-supprimer {
+    display: none;
 }

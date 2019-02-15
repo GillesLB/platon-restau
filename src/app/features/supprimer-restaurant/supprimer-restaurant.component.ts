@@ -15,6 +15,10 @@ export class SupprimerRestaurantComponent implements OnInit {
   pageMax = 0;
   indexPage: number[] = [];
   finBoucle = 0;
+  id: number = null;
+  aSupprimer: number[] = [];
+  test: string = '';
+  supprimerSelection: string = 'cacher-bouton-supprimer';
 
   restaurants: Restaurant[] = [
     // tslint:disable-next-line:max-line-length
@@ -67,6 +71,14 @@ export class SupprimerRestaurantComponent implements OnInit {
 
   constructor() { }
 
+  tableauPagine() {
+    this.nombreRestaurantTotal = this.restaurants.length;
+    this.pageMax = Math.ceil(this.nombreRestaurantTotal / 5);
+    for (let i = 0; i < 5; i++) {
+      this.restaurantsVisibles.push(this.restaurants[i]);
+    }
+  }
+
   pagePrecedente() {
     this.pageEnCours -= 1;
     this.restaurantsVisibles = [];
@@ -89,20 +101,32 @@ export class SupprimerRestaurantComponent implements OnInit {
   }
 
   ngOnInit() {
-      this.nombreRestaurantTotal = this.restaurants.length;
-      this.pageMax = Math.ceil(this.nombreRestaurantTotal / 5);
-      for (let i = 0; i < 5; i++) {
-        this.restaurantsVisibles.push(this.restaurants[i]);
-      }
+      this.tableauPagine();
   }
 
   cacherMessageConfirmationEnvoiNote() {
 
   }
 
+  cocher(event, check) {
+    if (check === true) {
+      this.id = event.target.value;
+      this.aSupprimer.push(this.id);
+      this.supprimerSelection = '';
+    } else {
+      let rangASupprimer = this.aSupprimer.indexOf(this.id);
+      this.aSupprimer.splice(rangASupprimer, 1);
+      this.id = null;
+      this.test = '';
+      this.supprimerSelection = 'cacher-bouton-supprimer'
+    }
+  }
+
   supprimerRestaurant() {
-    if (window.confirm(('Etes vous sur de vouloir supprimer cette sélection ?'))) {
-      alert('Voilà, c\'est fait !');
+    if (window.confirm(('Etes vous sur de vouloir supprimer ce(s) restaurant(s) ?'))) {
+      for (let i = 0; i < this.aSupprimer.length; i++) {
+        this.restaurants.splice(this.aSupprimer[i], 1);
+      }
     }
   }
 
