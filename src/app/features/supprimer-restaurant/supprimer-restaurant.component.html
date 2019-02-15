@@ -1,19 +1,66 @@
 <div>
-    
+
     <app-menu-gauche></app-menu-gauche>
-
+    
     <div class="espace-haut"></div>
     
-    <div class="centrer-texte taille-texte">
-        Supprimer un restaurant !
-    </div>
-
-    <img class="centrer-image" src="assets/images/supprimer.jpg" alt="croix rouge"/>
-
-    <div class="centrer-texte taille-texte">
-        Bientôt ...
-    </div>
-
+    <div class="titre">Sélectionnez les restaurants à supprimer :</div>
+    
+    <table class="largeur-tableau">
+    
+        <thead class="centrer-texte">
+        <tr>
+            <th class="a-supprimer">X</th>
+            <th>Nom</th>
+            <th>Adresse</th>
+            <th>Visité le</th>
+            <th>Note</th>
+            <th>Nb visites</th>
+            <th>Nb comm.</th>
+            <th>Détail</th>
+        </tr>
+        </thead>
+    
+        <tbody>
+        <ng-container *ngFor="let restaurantVisible of restaurantsVisibles">
+            <tr>
+                <td>
+                    <input type="checkbox" id={{restaurantVisible.nom}}
+                    value={{restaurantVisible.restaurantId}} />
+                </td>
+                <td class="texte-en-gras largeur-colonne-nom">{{restaurantVisible.nom}}</td>
+                <td class="largeur-colonne-adresse">{{restaurantVisible.adresse}}</td> 
+                <td class="centrer-texte">{{restaurantVisible.dateDerniereVisite}}</td>
+                <td *ngIf="restaurantVisible.note" class="centrer-texte largeur-colonne-note">{{restaurantVisible.note}} / 5</td>
+                <td *ngIf="!restaurantVisible.note" class="centrer-texte largeur-colonne-note">-</td>
+                <td class="centrer-texte">{{restaurantVisible.nombreVisite}}</td>
+                <td *ngIf="restaurantVisible.nombreCommentaire" class="centrer-texte largeur-colonne-note">{{restaurantVisible.nombreCommentaire}}</td>
+                <td *ngIf="!restaurantVisible.nombreCommentaire" class="centrer-texte largeur-colonne-note">-</td>
+                <td class="centrer-texte">
+                    <a [routerLink]="['/liste', restaurantVisible.restaurantId]"><app-bouton></app-bouton></a>
+                </td>
+            </tr>
+        </ng-container>
+        </tbody>
+    
+    </table>
+    
+    <nav aria-label="Pagination liste restaurants" class="centrer-pagination">
+        <ul *ngIf="nombreRestaurantTotal > 5" class="pagination">
+        <li class="page-item bouton-pagination"><a class="page-link pointeur" [ngClass]="{'cache': pageEnCours === 1}" (click)="pagePrecedente()"><<  Précédent</a></li>
+        <!-- TODO rendre la pagination dynamique -->
+        <li class="page-item bouton-pagination"><a class="page-link pointeur" [ngClass]="{'cache': pageEnCours === pageMax}" (click)="pageSuivante()">Suivant  >></a></li>
+        </ul>
+    </nav>
+    
     <div class="espace-haut"></div>
 
-</div>
+    <input class="margin-bouton bouton-supprimer-restaurant" type="submit"  
+            name="bouton-supprimer-restaurant" id="bouton-supprimer-restaurant"
+            value="Supprimer la sélection" (click)="supprimerRestaurant()"
+/>
+    
+    <div class="espace-haut"></div>
+    
+    </div>
+    

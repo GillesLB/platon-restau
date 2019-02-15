@@ -16,11 +16,20 @@ export class AjouterCommentaireComponent implements OnInit {
     public restaurantDetailComponent: RestaurantDetailComponent,
   ) { }
 
+  cacherMessageConfirmationEnvoiCommentaire() {
+    if (this.restaurantDetailComponent.confirmationEnvoiCommentaire === 'cacher-message-confirmation-envoi-commentaire') {
+      this.restaurantDetailComponent.confirmationEnvoiCommentaire = '';
+    } else {
+      this.restaurantDetailComponent.confirmationEnvoiCommentaire = 'cacher-message-confirmation-envoi-commentaire';
+    }
+  }
+
   onSubmit(value) {
     const auteur = value.auteur;
     const texte = value.texte;
 
     this.restaurantDetailComponent.formulaireCommentaire = 'cacher-formulaire-commentaire';
+    this.restaurantDetailComponent.confirmationEnvoiCommentaire = '';
     (this.listeRestaurantsComponent.restaurants[this.restaurantDetailComponent.id].commentaire).push({'auteur': auteur, 'texte': texte});
     const ajoutNombreCommentaire = (this.listeRestaurantsComponent.restaurants[this.restaurantDetailComponent.id].nombreCommentaire) + 1;
     this.listeRestaurantsComponent.restaurants[this.restaurantDetailComponent.id].nombreCommentaire = ajoutNombreCommentaire;

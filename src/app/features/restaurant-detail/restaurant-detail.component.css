@@ -131,3 +131,18 @@ a:link {
 .cacher-formulaire-note {
     display: none;
 }
+
+.cacher-message-confirmation-envoi-commentaire {
+    display: none;
+}
+
+.cacher-message-confirmation-envoi-note {
+    display: none;
+}
+
+.visuel-message-confirmation {
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+    color: rgb(7, 73, 5);
+}

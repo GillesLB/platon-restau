@@ -30,14 +30,22 @@ export class AjouterNoteComponent implements OnInit {
     this.nouvelleNote = event.target.value;
   }
 
+  cacherMessageConfirmationEnvoiNote() {
+    if (this.restaurantDetailComponent.confirmationEnvoiNote === 'cacher-message-confirmation-envoi-note') {
+      this.restaurantDetailComponent.confirmationEnvoiNote = '';
+    } else {
+      this.restaurantDetailComponent.confirmationEnvoiNote = 'cacher-message-confirmation-envoi-note';
+    }
+  }
+
   envoyerNote() {
     this.restaurantDetailComponent.formulaireNote = 'cacher-formulaire-note';
-    if ((this.listeRestaurantsComponent.restaurants[this.restaurantDetailComponent.id].note)) {
-      this.nouvelleNote = Math.ceil(((this.listeRestaurantsComponent.restaurants[this.restaurantDetailComponent.id].note) + this.nouvelleNote) / 2);
+    this.restaurantDetailComponent.confirmationEnvoiNote = '';
+    const noteRestaurant = this.listeRestaurantsComponent.restaurants[this.restaurantDetailComponent.id].note;
+    if (noteRestaurant) {
+      this.nouvelleNote = Math.ceil((noteRestaurant * 1 + this.nouvelleNote * 1) / 2);
     }
-    console.log('Avant : ', this.listeRestaurantsComponent.restaurants[this.restaurantDetailComponent.id].note);
     this.listeRestaurantsComponent.restaurants[this.restaurantDetailComponent.id].note = this.nouvelleNote;
-    console.log('Après : ', this.listeRestaurantsComponent.restaurants[this.restaurantDetailComponent.id].note);
   }
 
   ngOnInit() {

@@ -12,6 +12,8 @@ export class RestaurantDetailComponent implements OnInit {
 
   public formulaireCommentaire: string;
   public formulaireNote: string;
+  public confirmationEnvoiCommentaire: string;
+  public confirmationEnvoiNote: string;
   public id: string;
 
   public restaurant = this.restaurantsLRC.restaurants;
@@ -25,6 +27,8 @@ export class RestaurantDetailComponent implements OnInit {
     this.id = this.route.snapshot.paramMap.get('restaurantId');
     this.formulaireCommentaire = 'cacher-formulaire-commentaire';
     this.formulaireNote = 'cacher-formulaire-note';
+    this.confirmationEnvoiCommentaire = 'cacher-message-confirmation-envoi-commentaire';
+    this.confirmationEnvoiNote = 'cacher-message-confirmation-envoi-note';
   }
 
   cacherVisibleNote() {
@@ -33,6 +37,8 @@ export class RestaurantDetailComponent implements OnInit {
     } else {
       this.formulaireNote = 'cacher-formulaire-note';
     }
+    this.confirmationEnvoiNote = 'cacher-message-confirmation-envoi-note';
+    this.confirmationEnvoiCommentaire = 'cacher-message-confirmation-envoi-commentaire';
   }
 
   cacherVisibleCommentaire() {
@@ -41,6 +47,8 @@ export class RestaurantDetailComponent implements OnInit {
     } else {
       this.formulaireCommentaire = 'cacher-formulaire-commentaire';
     }
+    this.confirmationEnvoiNote = 'cacher-message-confirmation-envoi-note';
+    this.confirmationEnvoiCommentaire = 'cacher-message-confirmation-envoi-commentaire';
   }
 
 }

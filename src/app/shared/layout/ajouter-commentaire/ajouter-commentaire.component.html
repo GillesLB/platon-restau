@@ -22,6 +22,7 @@
     <input class="margin-bouton bouton-envoyer-commentaire" type="submit"  
           name="bouton-envoyer" id="bouton-envoyer"
           [disabled]="!commentaireForm.form.valid" value="Envoyer le commentaire"
+          (click)="cacherMessageConfirmationEnvoiCommentaire()"
     />
   
   </form>

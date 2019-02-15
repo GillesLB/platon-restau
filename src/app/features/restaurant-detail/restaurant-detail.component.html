@@ -4,7 +4,7 @@
 
 
 <div class="centrer fond-fiche margin-fiche taille-reponse">
-  <ng-container>
+
     <div class="titre-fiche centrer-texte">Fiche du restaurant</div>
     <div class="margin-categories">
       <span class="categories-fiche">Nom de l'établissement : </span>{{restaurant[id].nom}}
@@ -35,8 +35,21 @@
         </ul>
       </div>
     </div>
-  </ng-container>
   <br />
+</div>
+
+<div class="espace-haut"></div>
+
+<div class="visuel-message-confirmation">
+
+  <div class={{confirmationEnvoiCommentaire}}>
+    <span>Le commentaire a bien été envoyé !</span>
+  </div>
+
+  <div class={{confirmationEnvoiNote}}>
+    <span>La note a bien été envoyée !</span>
+  </div>
+
 </div>
 
 <div class="centrer-boutons">
