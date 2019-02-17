@@ -4,9 +4,9 @@
     
     <div class="espace-haut"></div>
     
-    <div class="titre">Sélectionnez les restaurants à supprimer :</div>
+    <div class="titre {{cacherTableauRestaurantsVisibles}}">Sélectionnez les restaurants à supprimer :</div>
     
-    <table class="largeur-tableau">
+    <table class="largeur-tableau {{cacherTableauRestaurantsVisibles}}">
     
         <thead class="centrer-texte">
         <tr>
@@ -21,14 +21,14 @@
         </thead>
     
         <tbody>
-        <ng-container *ngFor="let restaurantVisible of restaurantsVisibles">
+        <ng-container *ngFor="let restaurantVisible of restaurantsVisibles; let i = index">
             <tr>
                 <td>
                     <input type="checkbox" id={{restaurantVisible.nom}} name="restaurantsVisibles"
                     value={{restaurantVisible.restaurantId}} [(ngModel)]="check"
                     (change)="cocher($event, check)" [ngClass]="{'ligne-a-supprimer': check === true}" />
                 </td>
-                <td [ngClass]="{'ligne-a-supprimer': check === true}" class="texte-en-gras largeur-colonne-nom">{{restaurantVisible.nom}}</td>
+                <td [ngClass]="{'ligne-a-supprimer': check === true}" class="texte-en-gras largeur-colonne-nom">{{restaurantVisible.nom}} + {{i}}</td>
                 <td [ngClass]="{'ligne-a-supprimer': check === true}" class="largeur-colonne-adresse">{{restaurantVisible.adresse}}</td> 
                 <td [ngClass]="{'ligne-a-supprimer': check === true}" class="centrer-texte">{{restaurantVisible.dateDerniereVisite}}</td>
                 <td [ngClass]="{'ligne-a-supprimer': check === true}" *ngIf="restaurantVisible.note" class="centrer-texte largeur-colonne-note">{{restaurantVisible.note}} / 5</td>
@@ -42,7 +42,7 @@
     
     </table>
     
-    <nav aria-label="Pagination liste restaurants" class="centrer-pagination">
+    <nav aria-label="Pagination liste restaurants" class="centrer-pagination {{cacherTableauRestaurantsVisibles}}">
         <ul *ngIf="nombreRestaurantTotal > 5" class="pagination">
         <li class="page-item bouton-pagination"><a class="page-link pointeur" [ngClass]="{'cache': pageEnCours === 1}" (click)="pagePrecedente()"><<  Précédent</a></li>
         <!-- TODO rendre la pagination dynamique -->
@@ -60,6 +60,13 @@
     </span>
     
     <div class="espace-haut"></div>
-    
+
+    <span class={{cacherMessageConfirmationSuppression}}>
+        <img class="centrer-image" src="assets/images/supprimer.jpg" />
+        <div class="visuel-message-confirmation">La suppression de ce(s) restaurant(s) est confirmée.</div>
+    </span>
+        
+    <div class="espace-haut"></div>
+
     </div>
     

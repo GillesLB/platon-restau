@@ -19,6 +19,10 @@ export class SupprimerRestaurantComponent implements OnInit {
   aSupprimer: number[] = [];
   test: string = '';
   supprimerSelection: string = 'cacher-bouton-supprimer';
+  cacherMessageConfirmationSuppression: string = 'cacher-message-confirmation-suppression';
+  cacherTableauRestaurantsVisibles: string = '';
+  restaurantsVisibles = [];
+
 
   restaurants: Restaurant[] = [
     // tslint:disable-next-line:max-line-length
@@ -67,9 +71,11 @@ export class SupprimerRestaurantComponent implements OnInit {
     {'nom': 'Game over', 'adresse': '117 rue de la fin', 'dateDerniereVisite': '06/01/2019', 'note': 2, 'nombreVisite': 1, 'nombreCommentaire': 2, 'commentaire': [{'auteur': 'Marie', 'texte': 'Encore "Inser coin" ? C\'est bien la dernière fois que j\'y vais.'}, {'auteur': 'Olga', 'texte': 'Plutôt déprimant : je préfère aller au "Continue".'}], 'restaurantId': 21},
   ];
 
-  restaurantsVisibles = [];
-
   constructor() { }
+
+  ngOnInit() {
+    this.tableauPagine();
+}
 
   tableauPagine() {
     this.nombreRestaurantTotal = this.restaurants.length;
@@ -100,12 +106,9 @@ export class SupprimerRestaurantComponent implements OnInit {
     }
   }
 
-  ngOnInit() {
-      this.tableauPagine();
-  }
-
-  cacherMessageConfirmationEnvoiNote() {
-
+  cacherMessageConfirmationSuppressionRestaurant() {
+    this.cacherTableauRestaurantsVisibles = 'cacher-tableau-restaurants';
+    this.cacherMessageConfirmationSuppression = '';
   }
 
   cocher(event, check) {
@@ -120,6 +123,7 @@ export class SupprimerRestaurantComponent implements OnInit {
       this.test = '';
       this.supprimerSelection = 'cacher-bouton-supprimer'
     }
+    console.log('A supp : ', this.aSupprimer);
   }
 
   supprimerRestaurant() {
@@ -128,6 +132,8 @@ export class SupprimerRestaurantComponent implements OnInit {
         this.restaurants.splice(this.aSupprimer[i], 1);
       }
     }
+    this.supprimerSelection = 'cacher-bouton-supprimer'
+    this.cacherMessageConfirmationSuppressionRestaurant()
   }
 
 }

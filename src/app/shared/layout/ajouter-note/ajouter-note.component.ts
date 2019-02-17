@@ -31,16 +31,17 @@ export class AjouterNoteComponent implements OnInit {
   }
 
   cacherMessageConfirmationEnvoiNote() {
+    console.log('1',this.restaurantDetailComponent.confirmationEnvoiNote)
     if (this.restaurantDetailComponent.confirmationEnvoiNote === 'cacher-message-confirmation-envoi-note') {
       this.restaurantDetailComponent.confirmationEnvoiNote = '';
     } else {
       this.restaurantDetailComponent.confirmationEnvoiNote = 'cacher-message-confirmation-envoi-note';
     }
+    console.log('2', this.restaurantDetailComponent.confirmationEnvoiNote)
   }
 
   envoyerNote() {
     this.restaurantDetailComponent.formulaireNote = 'cacher-formulaire-note';
-    this.restaurantDetailComponent.confirmationEnvoiNote = '';
     const noteRestaurant = this.listeRestaurantsComponent.restaurants[this.restaurantDetailComponent.id].note;
     if (noteRestaurant) {
       this.nouvelleNote = Math.ceil((noteRestaurant * 1 + this.nouvelleNote * 1) / 2);

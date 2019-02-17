@@ -126,3 +126,27 @@ tr:nth-child(odd) {
 .cacher-bouton-supprimer {
     display: none;
 }
+
+.cacher-message-confirmation-suppression {
+    display: none;
+}
+
+.cacher-tableau-restaurants {
+    display:none;
+}
+
+.visuel-message-confirmation {
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+    color: rgb(7, 73, 5);
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+
+.centrer-image {
+    display: block;
+    margin: auto;
+    width: 10%;
+    margin-bottom: 30px;
+}
