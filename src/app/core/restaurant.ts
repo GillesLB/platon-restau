@@ -1,6 +1,7 @@
 export class Restaurant {
 
     constructor(
+        public check: boolean,
         public nom: string,
         public adresse: string,
         public dateDerniereVisite: string,

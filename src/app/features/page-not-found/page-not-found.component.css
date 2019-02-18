@@ -22,3 +22,7 @@
 .espace-haut {
     height: 20px;
 }
+
+.hauteur-minimum {
+    min-height: 760px;
+}

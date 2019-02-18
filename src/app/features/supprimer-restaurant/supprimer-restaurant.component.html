@@ -1,9 +1,11 @@
-<div>
+<div class="hauteur-minimum">
 
     <app-menu-gauche></app-menu-gauche>
     
     <div class="espace-haut"></div>
     
+<div>
+
     <div class="titre {{cacherTableauRestaurantsVisibles}}">Sélectionnez les restaurants à supprimer :</div>
     
     <table class="largeur-tableau {{cacherTableauRestaurantsVisibles}}">
@@ -21,21 +23,21 @@
         </thead>
     
         <tbody>
-        <ng-container *ngFor="let restaurantVisible of restaurantsVisibles; let i = index">
-            <tr>
+        <ng-container *ngFor="let restaurantVisible of restaurantsVisibles">
+            <tr [ngClass]="{'ligne-a-supprimer': restaurantVisible.check === true}">
                 <td>
-                    <input type="checkbox" id={{restaurantVisible.nom}} name="restaurantsVisibles"
-                    value={{restaurantVisible.restaurantId}} [(ngModel)]="check"
-                    (change)="cocher($event, check)" [ngClass]="{'ligne-a-supprimer': check === true}" />
+                    <input type="checkbox" id={{restaurantVisible.nom}} name={{restaurantVisible.nom}}
+                    value={{restaurantVisible.restaurantId}} [(ngModel)]=restaurantVisible.check
+                    (change)="cocher($event, restaurantVisible.check)" />
                 </td>
-                <td [ngClass]="{'ligne-a-supprimer': check === true}" class="texte-en-gras largeur-colonne-nom">{{restaurantVisible.nom}} + {{i}}</td>
-                <td [ngClass]="{'ligne-a-supprimer': check === true}" class="largeur-colonne-adresse">{{restaurantVisible.adresse}}</td> 
-                <td [ngClass]="{'ligne-a-supprimer': check === true}" class="centrer-texte">{{restaurantVisible.dateDerniereVisite}}</td>
-                <td [ngClass]="{'ligne-a-supprimer': check === true}" *ngIf="restaurantVisible.note" class="centrer-texte largeur-colonne-note">{{restaurantVisible.note}} / 5</td>
-                <td [ngClass]="{'ligne-a-supprimer': check === true}" *ngIf="!restaurantVisible.note" class="centrer-texte largeur-colonne-note">-</td>
-                <td [ngClass]="{'ligne-a-supprimer': check === true}" class="centrer-texte">{{restaurantVisible.nombreVisite}}</td>
-                <td [ngClass]="{'ligne-a-supprimer': check === true}" *ngIf="restaurantVisible.nombreCommentaire" class="centrer-texte largeur-colonne-note">{{restaurantVisible.nombreCommentaire}}</td>
-                <td [ngClass]="{'ligne-a-supprimer': check === true}" *ngIf="!restaurantVisible.nombreCommentaire" class="centrer-texte largeur-colonne-note">-</td>
+                <td class="texte-en-gras largeur-colonne-nom">{{restaurantVisible.nom}}</td>
+                <td class="largeur-colonne-adresse">{{restaurantVisible.adresse}}</td> 
+                <td class="centrer-texte">{{restaurantVisible.dateDerniereVisite}}</td>
+                <td *ngIf="restaurantVisible.note" class="centrer-texte largeur-colonne-note">{{restaurantVisible.note}} / 5</td>
+                <td *ngIf="!restaurantVisible.note" class="centrer-texte largeur-colonne-note">-</td>
+                <td class="centrer-texte">{{restaurantVisible.nombreVisite}}</td>
+                <td *ngIf="restaurantVisible.nombreCommentaire" class="centrer-texte largeur-colonne-note">{{restaurantVisible.nombreCommentaire}}</td>
+                <td *ngIf="!restaurantVisible.nombreCommentaire" class="centrer-texte largeur-colonne-note">-</td>
             </tr>
         </ng-container>
         </tbody>
@@ -67,6 +69,8 @@
     </span>
         
     <div class="espace-haut"></div>
+
+</div>
 
     </div>
     

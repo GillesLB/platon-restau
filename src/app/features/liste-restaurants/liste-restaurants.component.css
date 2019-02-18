@@ -94,3 +94,7 @@ tr:nth-child(odd) {
     margin-left: 20px;
     margin-right: 20px;
 }
+
+.hauteur-minimum {
+    min-height: 760px;
+}

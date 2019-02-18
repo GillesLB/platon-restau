@@ -146,3 +146,7 @@ a:link {
     font-weight: bold;
     color: rgb(7, 73, 5);
 }
+
+.hauteur-minimum {
+    min-height: 760px;
+}

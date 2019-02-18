@@ -119,7 +119,7 @@ tr:nth-child(odd) {
 }
 
 .ligne-a-supprimer {
-    background-color: rgb(104, 24, 24);
+    background-color: rgb(104, 24, 24) !important;
     color: white;
 }
 
@@ -149,4 +149,8 @@ tr:nth-child(odd) {
     margin: auto;
     width: 10%;
     margin-bottom: 30px;
+}
+
+.hauteur-minimum {
+    min-height: 760px;
 }
